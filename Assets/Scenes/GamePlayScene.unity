@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -336,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 5778658776757278072}
     - target: {fileID: 5778658776458168625, guid: 7402caf0bb8b34943b6f28045af13f4c, type: 3}
       propertyPath: padding
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5778658776458168625, guid: 7402caf0bb8b34943b6f28045af13f4c, type: 3}
       propertyPath: gridSize.x
@@ -346,6 +346,10 @@ PrefabInstance:
       propertyPath: gridSize.y
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5778658776458168625, guid: 7402caf0bb8b34943b6f28045af13f4c, type: 3}
+      propertyPath: slotPrefab
+      value: 
+      objectReference: {fileID: 8560649904703395235, guid: 13a9bf906f2e7fd4ea0102afad59c60e, type: 3}
     - target: {fileID: 5778658776458168625, guid: 7402caf0bb8b34943b6f28045af13f4c, type: 3}
       propertyPath: canvasScaler
       value: 
