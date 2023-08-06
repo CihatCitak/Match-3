@@ -89,4 +89,10 @@ MonoBehaviour:
   gridSize: {x: 0, y: 0}
   padding: 0
   safeArea: {fileID: 5238864500084894668}
-  cellPrefab: {fileID: 3226251597472977076, guid: 13a9bf906f2e7fd4ea0102afad59c60e, type: 3}
+  slotPrefabs:
+  - {fileID: 7980536426341769857, guid: daaf6d7fcba8d824f83fbb4fd85e98ab, type: 3}
+  - {fileID: 7980536426341769857, guid: be9547102ba4bf8419c2654b9d83203d, type: 3}
+  - {fileID: 7980536426341769857, guid: 41e476caa234cf84c8ce0a0ad55a1142, type: 3}
+  - {fileID: 1174084209110326322, guid: 20ee996930dd9844abd7e64fd2c690af, type: 3}
+  - {fileID: 7980536426341769857, guid: 136a79096e636f64f89c7f8d45b9212c, type: 3}
+  canvasScaler: {fileID: 0}
