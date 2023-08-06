@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Slots;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace GridSystem
 {
@@ -10,23 +11,21 @@ namespace GridSystem
         [SerializeField] private Vector2Int gridSize;
         [SerializeField] private float padding;
         [SerializeField] private RectTransform safeArea;
-        [SerializeField] private GameObject cellPrefab;
+        [SerializeField] private List<Slot> slotPrefabs;
         [SerializeField] CanvasScaler canvasScaler;
 
-        private const float cellReferenceSize = 100f;
-        private List<GameObject> grid = new List<GameObject>();
+        private const float slotReferenceSize = 100f;
+        private List<Slot> grid = new List<Slot>();
 
         private void Start()
         {
             Application.targetFrameRate = 1000;
             var safeAreaWidth = canvasScaler.referenceResolution.x + safeArea.sizeDelta.x;
-            //var safeAreaHeight = canvasScaler.referenceResolution.y + safeArea.sizeDelta.y;
 
             var totalPaddingWidth = (gridSize.x - 1) * padding;
             var totalPaddingHeight = (gridSize.y - 1) * padding;
             var newCellSize = (safeAreaWidth - totalPaddingWidth) / gridSize.x;
 
-            // Soldan Sağa dizmeye başladığımız senaryoya göre işlemleri ilerletiyoruz
             var startPositionX = (safeAreaWidth - newCellSize) / 2f;
 
             var totalNeedHeight = gridSize.y * newCellSize + totalPaddingHeight;
@@ -40,14 +39,14 @@ namespace GridSystem
                     var nextPositionX = -startPositionX + (newCellSize + padding) * j;
                     var nextPositionY = startPositionY - (newCellSize + padding) * i;
 
-                    var cell = Instantiate(cellPrefab, safeArea);
+                    var slot = Instantiate(slotPrefabs[Random.Range(0, slotPrefabs.Count)], safeArea);
 
-                    cell.transform.localScale = Vector3.one * (newCellSize / cellReferenceSize);
-                    cell.transform.localPosition = new Vector3(nextPositionX, nextPositionY, 0f);
+                    slot.transform.localScale = Vector3.one * (newCellSize / slotReferenceSize);
+                    slot.transform.localPosition = new Vector3(nextPositionX, nextPositionY, 0f);
 
-                    cell.name = string.Format("Cell: {0} , {1}", i, j);
+                    slot.name = string.Format("Cell: {0} , {1}", i, j);
 
-                    grid.Add(cell);
+                    grid.Add(slot);
                 }
             }
         }
