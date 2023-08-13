@@ -1,7 +1,5 @@
-﻿using Slots;
-using UnityEditor;
+using Slots;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 namespace GridSystem
@@ -10,17 +8,15 @@ namespace GridSystem
     {
         [SerializeField] private Vector2Int gridSize;
         [SerializeField] private float padding;
-        [SerializeField] private RectTransform safeArea;
         [SerializeField] private List<Slot> slotPrefabs;
-        [SerializeField] CanvasScaler canvasScaler;
+        [SerializeField] private SafeArea safeAreaCalculater;
 
-        private const float slotReferenceSize = 100f;
+        private const float slotReferenceSize = 1f;
         private List<Slot> grid = new List<Slot>();
 
         private void Start()
         {
-            Application.targetFrameRate = 1000;
-            var safeAreaWidth = canvasScaler.referenceResolution.x + safeArea.sizeDelta.x;
+            var safeAreaWidth = safeAreaCalculater.GetWidth();
 
             var totalPaddingWidth = (gridSize.x - 1) * padding;
             var totalPaddingHeight = (gridSize.y - 1) * padding;
@@ -31,7 +27,6 @@ namespace GridSystem
             var totalNeedHeight = gridSize.y * newCellSize + totalPaddingHeight;
             var startPositionY = (totalNeedHeight - newCellSize) / 2;
 
-
             for (int i = 0; i < gridSize.y; i++)
             {
                 for (int j = 0; j < gridSize.x; j++)
@@ -39,7 +34,7 @@ namespace GridSystem
                     var nextPositionX = -startPositionX + (newCellSize + padding) * j;
                     var nextPositionY = startPositionY - (newCellSize + padding) * i;
 
-                    var slot = Instantiate(slotPrefabs[Random.Range(0, slotPrefabs.Count)], safeArea);
+                    var slot = Instantiate(slotPrefabs[Random.Range(0, slotPrefabs.Count)], transform);
 
                     slot.transform.localScale = Vector3.one * (newCellSize / slotReferenceSize);
                     slot.transform.localPosition = new Vector3(nextPositionX, nextPositionY, 0f);
@@ -48,20 +43,6 @@ namespace GridSystem
 
                     grid.Add(slot);
                 }
-            }
-        }
-
-        private void OnValidate()
-        {
-            if (EditorApplication.isPlaying && grid != null)
-            {
-                foreach (var item in grid)
-                {
-                    Destroy(item);
-                }
-
-                grid.Clear();
-                Start();
             }
         }
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1650794465012459921
+--- !u!1 &8543241406249944929
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,91 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5238864500084894668}
-  m_Layer: 0
-  m_Name: SafeArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5238864500084894668
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650794465012459921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4587787339172502917}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -60, y: -200}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &8750043550328889319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4587787339172502917}
-  - component: {fileID: 8750043550328889317}
-  m_Layer: 0
+  - component: {fileID: 8543241406249944928}
+  - component: {fileID: 8543241406249944935}
+  m_Layer: 5
   m_Name: GridManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4587787339172502917
-RectTransform:
+--- !u!4 &8543241406249944928
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750043550328889319}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 8543241406249944929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5238864500084894668}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8750043550328889317
+--- !u!114 &8543241406249944935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750043550328889319}
+  m_GameObject: {fileID: 8543241406249944929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfed7ebc312f5d148a7bba6678c82f68, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e2af8f850eaf7c41917140346bc1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 0, y: 0}
-  padding: 0
-  safeArea: {fileID: 5238864500084894668}
+  gridSize: {x: 8, y: 10}
+  padding: 0.05
   slotPrefabs:
-  - {fileID: 7980536426341769857, guid: daaf6d7fcba8d824f83fbb4fd85e98ab, type: 3}
-  - {fileID: 7980536426341769857, guid: be9547102ba4bf8419c2654b9d83203d, type: 3}
-  - {fileID: 7980536426341769857, guid: 41e476caa234cf84c8ce0a0ad55a1142, type: 3}
-  - {fileID: 1174084209110326322, guid: 20ee996930dd9844abd7e64fd2c690af, type: 3}
-  - {fileID: 7980536426341769857, guid: 136a79096e636f64f89c7f8d45b9212c, type: 3}
-  canvasScaler: {fileID: 0}
+  - {fileID: 5368458864536513478, guid: ad89213b38fc94b418e9812af65772f9, type: 3}
+  - {fileID: 5368458864536513478, guid: 4ed98cee655590244b243d003e364e44, type: 3}
+  - {fileID: 5368458864536513478, guid: 8d22930880f8a9b40a5994652c388b09, type: 3}
+  - {fileID: 5368458864536513478, guid: fcb7a6ff96aac9b498be4ade0f1b3923, type: 3}
+  - {fileID: 5368458864536513478, guid: 320b2b0fee080994fb388f2cbb078f0b, type: 3}
+  safeAreaCalculater: {fileID: 0}

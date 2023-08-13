@@ -2,10 +2,11 @@ namespace Slots
 {
     public enum ColorType
     {
+        NONE,
         BLUE,
         GREEN,
-        RED,
         PINK,
+        RED,
         YELLOW
     }
 }
