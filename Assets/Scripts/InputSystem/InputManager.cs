@@ -40,7 +40,36 @@ namespace InputSystem
                     fingerUpObject.FingerUp();
                 }
 
+                fingerDownSlot = null;
+
                 return;
+            }
+
+            if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                if (fingerDownSlot == null)
+                    return;
+
+                Vector2 deltaPos= Input.GetTouch(0).deltaPosition;
+
+                if (deltaPos.x > 1)
+                {
+                    Debug.Log("Right");
+                }
+                else if (deltaPos.x < -1)
+                {
+                    Debug.Log("Left");
+                }
+                else if (deltaPos.y > 1)
+                {
+                    Debug.Log("Up");
+                }
+                else if (deltaPos.y < -1)
+                {
+                    Debug.Log("Down");
+                }
+
+                fingerDownSlot = null;
             }
         }
     }
